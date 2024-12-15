@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import kt.atlas.navigation.navigation.NavigationHostWrapper
 import kt.atlas.navigation.routable.Routables
 
+
 abstract class ScreenStack<S : Screen>(
     val host: ScreenHost<S>,
 

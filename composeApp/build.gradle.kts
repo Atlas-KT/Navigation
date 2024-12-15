@@ -11,6 +11,9 @@ plugins {
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.compose)
     alias(libs.plugins.kotlinx.serialization)
+
+    id("maven-publish")
+    id("signing")
 }
 
 kotlin {
@@ -28,6 +31,14 @@ kotlin {
             implementation(libs.navigation.compose)
 
             implementation(kotlin("reflect"))
+        }
+    }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("jitpack") {
+            from(components["kotlin"])
         }
     }
 }
