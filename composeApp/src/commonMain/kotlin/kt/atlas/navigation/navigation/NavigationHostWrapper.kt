@@ -11,7 +11,6 @@ package kt.atlas.navigation.navigation
 import androidx.compose.animation.*
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.Modifier
@@ -34,7 +33,7 @@ class NavigationHostWrapper<S : Routable>(
     ) {
         internalHostController = rememberNavController()
 
-        Surface { content() }
+        content()
     }
 
     @Immutable
