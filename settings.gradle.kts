@@ -36,5 +36,4 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-include(":composeApp")
 

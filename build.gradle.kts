@@ -7,8 +7,34 @@
  */
 
 plugins {
-    alias(libs.plugins.multiplatform).apply(false)
-    alias(libs.plugins.compose.compiler).apply(false)
-    alias(libs.plugins.compose).apply(false)
-    alias(libs.plugins.kotlinx.serialization).apply(false)
+    alias(libs.plugins.multiplatform)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.compose)
+    alias(libs.plugins.kotlinx.serialization)
+
+    id("maven-publish")
+}
+
+kotlin {
+    jvm()
+
+    sourceSets {
+        commonMain.dependencies {
+            implementation(compose.runtime)
+            implementation(libs.navigation.compose)
+
+            implementation(kotlin("reflect"))
+        }
+    }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("jitpack") {
+            from(components["kotlin"])
+
+            groupId = "kt.atlas.navigation"
+            artifactId = "navigation"
+        }
+    }
 }
