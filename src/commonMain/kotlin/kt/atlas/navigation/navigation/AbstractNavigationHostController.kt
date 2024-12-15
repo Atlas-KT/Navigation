@@ -61,14 +61,18 @@ abstract class AbstractNavigationHostController<S : Routable>(
     @Composable
     private fun registerPre() {
         for (routable in routables.values) {
-            if (routable is ComposableRoutable) routable.composite(CompositionStage.Prior)
+            if (routable is ComposableRoutable) {
+                routable.precompose()
+            }
         }
     }
 
     @Composable
     private fun registerPost() {
         for (routable in routables.values) {
-            if (routable is ComposableRoutable) routable.composite(CompositionStage.Post)
+            if (routable is ComposableRoutable) {
+                routable.postcompose()
+            }
         }
     }
 
