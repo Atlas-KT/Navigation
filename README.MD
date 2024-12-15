@@ -60,7 +60,7 @@ Navigation is hosted on JitPack. To add it to your project, follow these steps:
 
    ```kotlin
    dependencies {
-       implementation("kt.atlas.navigation:Navigation:latest-version")
+       implementation("com.github.Atlas-KT.Navigation:composeApp:{version}")
    }
    ```
 
