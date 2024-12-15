@@ -39,6 +39,9 @@ publishing {
     publications {
         create<MavenPublication>("jitpack") {
             from(components["kotlin"])
+
+            groupId = "kt.atlas.navigation"
+            artifactId = "navigation"
         }
     }
 }
