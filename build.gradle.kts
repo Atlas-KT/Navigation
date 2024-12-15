@@ -21,6 +21,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(compose.runtime)
+            implementation(compose.foundation)
             implementation(libs.navigation.compose)
 
             implementation(kotlin("reflect"))

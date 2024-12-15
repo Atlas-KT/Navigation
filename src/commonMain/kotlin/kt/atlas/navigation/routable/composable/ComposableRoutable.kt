@@ -13,6 +13,12 @@ import kt.atlas.navigation.routable.Routable
 
 interface ComposableRoutable : Routable {
     @Composable
-    fun composite(compositionStage: CompositionStage = CompositionStage.Composite)
+    fun precompose()
+
+    @Composable
+    fun compose()
+
+    @Composable
+    fun postcompose()
 }
 
